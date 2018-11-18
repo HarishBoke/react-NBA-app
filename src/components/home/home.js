@@ -1,5 +1,7 @@
 import React, {Component} from "react";
+
 import SimpleSlider from "../shared/slider";
+import Subscriptions from "./subscriptions";
 
 export default class Home extends Component {
     constructor(props){
@@ -28,6 +30,7 @@ export default class Home extends Component {
         return(
             <div>
                 <SimpleSlider slides={this.state.home.slider} />
+                <Subscriptions />
             </div>
         );
     }
