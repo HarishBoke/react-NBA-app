@@ -1,12 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import Header from "./components/header";
+import Home from  "./components/home/home";
+import Teams from "./components/teams";
+
+
+
+class App extends React.Component {
+    
+    render(){
+        return(
+            <div>
+                <Home />
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+<Router>
+    <div>
+    <Header />
+    <Route exact path="/" component={App} />
+    <Route path="/teams" component={Teams} />
+    </div>
+</Router>, document.getElementById("root"));
